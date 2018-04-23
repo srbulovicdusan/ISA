@@ -16,13 +16,15 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(String username, String password, UserType userType, Adresa address, String email) {
+	public User(String firstName,String lastName, String username, String password, UserType userType, Adresa address, String email) {
 		super();
+		this.firstName = firstName;
 		this.username = username;
 		this.password = password;
 		this.userType = userType;
 		this.address = address;
 		this.email = email;
+		this.lastName = lastName;
 	}
 	public String getUsername() {
 		return username;
