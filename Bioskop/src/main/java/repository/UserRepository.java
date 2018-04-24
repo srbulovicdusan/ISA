@@ -16,6 +16,11 @@ public class UserRepository implements UserInterface {
 	}
 	@Override
 	public User addUser(User user) {
+		for (User u : users){
+			if (u.getUsername().equals(user.getUsername())){
+				return null;
+			}
+		}
 		users.add(user);
 		return user;
 	}
@@ -27,7 +32,6 @@ public class UserRepository implements UserInterface {
 	}
 	@Override
 	public User getUser(String id) {
-		// TODO Auto-generated method stub
 		for (User u : users){
 			if (u.getUsername().equals(id)){
 				return u;
@@ -35,5 +39,4 @@ public class UserRepository implements UserInterface {
 		}
 		return null;
 	}
-
 }

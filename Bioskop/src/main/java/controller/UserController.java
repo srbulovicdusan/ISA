@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +17,7 @@ import service.UserService;
 
 @RestController
 public class UserController {
-	
-
+	private static final String DEFAULT_ADMIN_PASSWORD = "ftn";
 	@Autowired
 	private UserService userService;
 
@@ -41,7 +38,7 @@ public class UserController {
 			value= "/api/users/{id}",
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			method = RequestMethod.GET)
-	public ResponseEntity<User> getItem(@PathVariable("id") String id){
+	public ResponseEntity<User> getUser(@PathVariable("id") String id){
 		
 		User user = userService.getUser(id);
 		if (user != null){
@@ -56,6 +53,9 @@ public class UserController {
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			method = RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user){
+		if (user.getPassword() == null){
+			user.setPassword(DEFAULT_ADMIN_PASSWORD);
+		}
 		User newUser = userService.addUser(user);
 		return new ResponseEntity<User>(newUser, HttpStatus.OK);
 	}
