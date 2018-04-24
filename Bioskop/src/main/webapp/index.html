@@ -96,7 +96,15 @@
 				 
 				});
 		
-</script>
+	</script>
+	<script type="text/javascript">
+		$(".panel-body").click(function(){
+			$("#body").empty();
+			$("#body").load("/api/projections");
+			
+		});
+	
+	</script>
 </body>
 
 </html>

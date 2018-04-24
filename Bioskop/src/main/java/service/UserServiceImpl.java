@@ -9,8 +9,10 @@ import domain.User;
 import repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
+	
 	@Autowired
 	UserRepository repository;
+	
 	@Override
 	public Collection<User> getUsers() {
 		Collection<User> users = repository.getUsers();

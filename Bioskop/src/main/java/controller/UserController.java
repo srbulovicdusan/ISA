@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,6 @@ import service.UserService;
 @RestController
 public class UserController {
 	
-
 	@Autowired
 	private UserService userService;
 
@@ -41,7 +38,7 @@ public class UserController {
 			value= "/api/users/{id}",
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			method = RequestMethod.GET)
-	public ResponseEntity<User> getItem(@PathVariable("id") String id){
+	public ResponseEntity<User> getUser(@PathVariable("id") String id){
 		
 		User user = userService.getUser(id);
 		if (user != null){
@@ -51,7 +48,7 @@ public class UserController {
 		}
 	}
 	@RequestMapping(
-			value = "/api/users",
+			value = "/api/createUser",
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			method = RequestMethod.POST)

@@ -18,9 +18,6 @@ import domain.ThematicItem;
 
 import service.ThematicItemService;
 
-
-
-
 @RestController
 public class ThematicItemController {
 	
