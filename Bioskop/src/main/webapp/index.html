@@ -17,6 +17,7 @@
       <link href="css/jumbotron.css" rel="stylesheet">
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
    </head>
 
 <body>
@@ -62,7 +63,7 @@
       				<div class="panel-heading">
       					<h3 class="panel-title">Cinema</h3>
       				</div>
-      				<div class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
+      				<div id="cinema" class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
       					
       					 <img src="http://essayden.com/wp-content/uploads/2017/12/movies.jpg" class="img-responsive center-block"/>
       				</div>
@@ -73,7 +74,7 @@
       				<div class="panel-heading">
       					<h3 class="panel-title">Theater</h3>
       				</div>
-      				<div class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
+      				<div id="theater" class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
       					  <img src="https://www.mdc.edu/main/images/05-WJL-Theater--r_tcm6-69787.jpg" class="img-responsive center-block"/>
       					 
       				</div>
@@ -82,29 +83,36 @@
       		
       	</div>
       </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
       <script src="js/bootstrap.min.js"></script>
 
 	  <script>
+	  		
+
 
 			$("#admin-button").click(function() {
 				  $("#body").empty();
-				  var adminPage='<div class="col-md-8 col-md-offset-2" style="margin-top:100px;" ><table class="table table-striped"><thead><tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr></thead><tbody><tr><td>1</td><td>Mark</td><td>Otto</td><td>@mdo</td></tr><tr><td>2</td><td>Jacob</td><td>Thornton</td><td>@fat</td></tr><tr><td>3</td><td>Larry</td><td>the Bird</td><td>@twitter</td></tr></tbody></table> </div>';
-				  var page = {body:"<h1 style='margin-top:100px'>aaaa<h2>"};
-				  $("#body").append(page.body);
-				 
+				  
+					$.get("adminPanel.html", function( adminPanel ) {
+						 
+						  $("#body").append(adminPanel);
+						 
+						});
+
 				});
 		
 	</script>
 	<script type="text/javascript">
-		$(".panel-body").click(function(){
+		$("#theater").click(function(){
 			$("#body").empty();
 			$("#body").load("/api/projections");
 			
 		});
 	
 	</script>
+			});
+		
 </body>
 
 </html>
