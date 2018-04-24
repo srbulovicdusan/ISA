@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import org.springframework.stereotype.Repository;
 import domain.TheaterOrCinema;
-import domain.User;
 
 @Repository
 public class TheaterOrCinemaRepository implements TheaterOrCinemaRepositoryInterface{

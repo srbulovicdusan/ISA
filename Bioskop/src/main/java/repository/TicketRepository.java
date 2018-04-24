@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Repository;
 
-import domain.Projection;
 import domain.Ticket;
 
 @Repository

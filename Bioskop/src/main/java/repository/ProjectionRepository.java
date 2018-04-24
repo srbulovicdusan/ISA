@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.stereotype.Repository;
 
 import domain.Projection;
-import domain.User;
 
 @Repository
 public class ProjectionRepository implements ProjectionInterface{

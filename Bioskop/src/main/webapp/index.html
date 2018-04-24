@@ -9,7 +9,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="icon" href="favicon.ico">
-      <title>Cinema</title>
+      <title>Cinemaaa</title>
       <!-- Bootstrap core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet"> 
@@ -61,7 +61,7 @@
       		<div class="col-md-4 col-md-offset-2">
       			<div class="panel panel-primary"   >
       				<div class="panel-heading">
-      					<h3 class="panel-title">Cinema</h3>
+      					<h3 class="panel-title">Cinemaaaa</h3>
       				</div>
       				<div id="cinema" class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
       					
@@ -89,17 +89,20 @@
 
 	  <script>
 	  		
-
+	 
 
 			$("#admin-button").click(function() {
+				var state = $("#body").outerHTML;
+					
 				  $("#body").empty();
 				  
-					$.get("adminPanel.html", function( adminPanel ) {
+					$.get("AdminPanel.html", function( adminPanel ) {
 						 
 						  $("#body").append(adminPanel);
 						 
 						});
-
+					
+					
 				});
 		
 	</script>
@@ -111,7 +114,7 @@
 		});
 	
 	</script>
-			});
+			
 		
 </body>
 
