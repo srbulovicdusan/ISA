@@ -91,18 +91,14 @@
 
 	  <script>
 	  		
-
 	  $("#logout-btn").hide();
-
-
-	 
 
 			$("#admin-button").click(function() {
 				var state = $("#body").outerHTML;
 					
 				  $("#body").empty();
 				  
-					$.get("AdminPanel.html", function( adminPanel ) {
+					$.get("adminPanel.html", function( adminPanel ) {
 						 
 						  $("#body").append(adminPanel);
 						 
@@ -114,9 +110,7 @@
 		</script>
 		
 		<script src="login.js"></script>
-
-					
-			
+		
 	<script type="text/javascript">
 		$("#theater").click(function(){
 			$("#body").empty();
