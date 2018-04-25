@@ -88,11 +88,11 @@
 							    		<h3 class="panel-title">Please enter information about new admin </h3>
 							 			</div>
 							 			<div class="panel-body">
-							    		<form role="form" id="formCinema">
+							    		<form role="form" data-toggle="validator" id="formCinema">
 							    			<div class="row">
 							    				<div class="col-xs-6 col-sm-6 col-md-6">
 							    					<div class="form-group">
-							                			<input type="text" name="name" id="name" class="form-control input-sm" placeholder="Name">
+							                			<input type="text" name="name" id="name" class="form-control input-sm"  placeholder="Name">
 							    					</div>
 							    				</div>
 							    				<div class="col-xs-6 col-sm-6 col-md-6">
@@ -136,6 +136,7 @@
 				    </div>
 				  </div>
 				  </div> 
+				  </div>
 <script>
 	$('#modal').on('hidden.bs.modal', function(){
     	$(this).find('form')[0].reset();
@@ -160,7 +161,8 @@
 		    dataType: 'json',
 		    success: function(data){
 
-		    	
+		    	alert("Admin " + data.username + " has been successfully added!");
+
 				$('#modal').modal('toggle');
 
 
@@ -176,11 +178,7 @@
 	$("#addEntity").click(function() {
 		 var entity = {};
 		 var isCinema = $('#cinema:checked').val()?true:false;
-		 if (isCinema){
-			 alert("cinema je");
-		 }else{
-			 alert("Nije cinema");
-		 }
+
 		 entity.cinema = isCinema;
 		 entity.name = $("#name").val();
 		 var adress = { "city" : $("#cityCinema").val(),
@@ -195,13 +193,13 @@
 		    dataType: 'json',
 		    success: function(data){
 
-		    	
+		    	alert("Succesful add!");
 				$('#newCinema').modal('toggle');
 
 
 		    },
 		    error: function(data){
-		    	alert("username already exists");
+		    	alert("name already exists");
 		    },
 		    processData: false,
 		    type: 'POST',
@@ -210,5 +208,17 @@
 
 	});
 
+</script>
+	<script  type="text/javascript">
+		
+ 		var frmvalidator = new Validator("formCinema");
+ 		frmvalidator.addValidation("name","req","Please enter your First Name");
+ 		frmvalidator.addValidation("name","maxlen=20",
+  		      "Max length for FirstName is 20");
+ 
+ 		 frmvalidator.addValidation("name","req");
+		 frmvalidator.addValidation("name","maxlen=20");
+ 
+ 		
 </script>
 				
