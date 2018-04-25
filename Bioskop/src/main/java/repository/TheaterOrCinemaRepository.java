@@ -2,9 +2,11 @@ package repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+
 import org.springframework.stereotype.Repository;
+
+import domain.Adresa;
 import domain.TheaterOrCinema;
-import domain.User;
 
 @Repository
 public class TheaterOrCinemaRepository implements TheaterOrCinemaRepositoryInterface{
@@ -13,6 +15,15 @@ public class TheaterOrCinemaRepository implements TheaterOrCinemaRepositoryInter
 	
 	@Override
 	public Collection<TheaterOrCinema> getTheaterOrCinemas() {
+		Adresa adresa = new Adresa("City", "Street");
+		TheaterOrCinema c1 = new TheaterOrCinema("Name1",adresa, "Description1..................", true);
+		TheaterOrCinema c2 = new TheaterOrCinema("Name2",adresa, "Description2..................", true);
+		TheaterOrCinema c3 = new TheaterOrCinema("Name3",adresa, "Description3..................", false);
+		TheaterOrCinema c4 = new TheaterOrCinema("Name4",adresa, "Description4..................", true);
+		cinemas.add(c1);
+		cinemas.add(c2);
+		cinemas.add(c3);
+		cinemas.add(c4);
 		return cinemas;
 	}
 

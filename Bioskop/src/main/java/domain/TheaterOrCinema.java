@@ -18,6 +18,13 @@ public class TheaterOrCinema {
 	public TheaterOrCinema() {
 		
 	}
+	public TheaterOrCinema(String name, Adresa adress, String description, boolean isCinema) {
+		super();
+		this.name = name;
+		this.adress = adress;
+		this.description = description;
+		this.isCinema = isCinema;
+	}
 	public TheaterOrCinema(String name, Adresa adress, String description, ArrayList<Ticket> fastRezTicket,
 			ArrayList<Projection> projections, Long id, boolean isCinema) {
 		super();

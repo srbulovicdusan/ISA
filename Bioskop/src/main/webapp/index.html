@@ -9,7 +9,6 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="icon" href="favicon.ico">
-      <title>Cinema</title>
       <!-- Bootstrap core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet"> 
@@ -88,9 +87,6 @@
       <script src="js/bootstrap.min.js"></script>
 
 	  <script>
-	  		
-
-
 			$("#admin-button").click(function() {
 				  $("#body").empty();
 				  
@@ -99,19 +95,26 @@
 						  $("#body").append(adminPanel);
 						 
 						});
-
 				});
-		
 	</script>
-	<script type="text/javascript">
+	
+	<script>
 		$("#theater").click(function(){
 			$("#body").empty();
-			$("#body").load("/api/projections");
-			
+			$.get("theaters.html", function( theaters ) {
+				$("#body").append(theaters);
+				});
 		});
-	
 	</script>
-			});
+	
+	<script>
+		$("#cinema").click(function(){
+			$("#body").empty();
+			$.get("cinemas.html", function( cinemas ) {
+				$("#body").append(cinemas);
+				});
+		});
+	</script>
 		
 </body>
 

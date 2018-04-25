@@ -15,8 +15,12 @@ public class ProjectionRepository implements ProjectionInterface{
 	
 	@Override
 	public Collection<Projection> getProjections() {
-		//Projection p =  new Projection("sa", "dfsf", "dsf", "dss", 125);
-		//projections.add(p);
+		Projection p1 =  new Projection("sa", "dfsf", "dsf", "dss", 125);
+		Projection p2 =  new Projection("sa", "dfsf", "dsf", "dss", 125);
+		Projection p3 =  new Projection("sa", "dfsf", "dsf", "dss", 125);
+		projections.add(p1);
+		projections.add(p2);
+		projections.add(p3);
 		return projections;
 	}
 
