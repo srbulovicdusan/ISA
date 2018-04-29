@@ -7,15 +7,25 @@ public class Adresa {
 
 	private String city;
 	private String street;
+	private String contactNumber;
 	
 	public Adresa() {
 		
 	}
 	
-	public Adresa(String city, String street) {
+	public Adresa(String city, String street, String contact) {
 		super();
 		this.city = city;
 		this.street = street;
+		this.contactNumber = contact;
+	}
+
+	public String getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
 	}
 
 	public String getCity() {

@@ -9,7 +9,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="icon" href="favicon.ico">
-      <title>Cinemaaa</title>
+      <title>Cinemaaaaa</title>
       <!-- Bootstrap core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet"> 
@@ -34,7 +34,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="/EmergencySituations/">Cinema</a>
+               <a class="navbar-brand" href="index.html">Cinema</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                <form id="login-form" class="navbar-form navbar-right">
@@ -67,7 +67,7 @@
       		<div class="col-md-4 col-md-offset-2">
       			<div class="panel panel-primary"   >
       				<div class="panel-heading">
-      					<h3 class="panel-title">Cinemaaaa</h3>
+      					<h3 class="panel-title">Cinema</h3>
       				</div>
       				<div id="cinema" class="panel-body" style="margin-left:0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px">
       					
@@ -108,24 +108,29 @@
 						 
 						});
 
-				 
-			});
-			
-		</script>
-		
-		<script src="login.js"></script>
+				});
+	</script>
+	
+	
+	<script src="login.js"></script>
 		
 	<script type="text/javascript">
 		$("#theater").click(function(){
 			$("#body").empty();
-			$("#body").load("/api/projections");
-			
+			$.get("theaters.html", function( theaters ) {
+				$("#body").append(theaters);
+				});
 		});
-	
 	</script>
-
 	
-			
+	<script>
+		$("#cinema").click(function(){
+			$("#body").empty();
+			$.get("cinemas.html", function( cinemas ) {
+				$("#body").append(cinemas);
+				});
+		});
+	</script>
 		
 </body>
 

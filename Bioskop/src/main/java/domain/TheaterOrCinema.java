@@ -10,7 +10,8 @@ public class TheaterOrCinema {
 	private Adresa adress;
 	private String description;
 	private ArrayList<Ticket> fastRezTicket;
-	private ArrayList<Projection> projections;
+	private ArrayList<Projection> repertoar;
+	private double averageMark;
 	//SEGMENTI I MESTA U SALI
 	private Long id;
 	private boolean isCinema;
@@ -18,16 +19,31 @@ public class TheaterOrCinema {
 	public TheaterOrCinema() {
 		
 	}
+	public TheaterOrCinema(String name, Adresa adress, String description, boolean isCinema) {
+		super();
+		this.name = name;
+		this.adress = adress;
+		this.description = description;
+		this.isCinema = isCinema;
+	}
 	public TheaterOrCinema(String name, Adresa adress, String description, ArrayList<Ticket> fastRezTicket,
-			ArrayList<Projection> projections, Long id, boolean isCinema) {
+			ArrayList<Projection> projections, double averageMark, Long id, boolean isCinema) {
 		super();
 		this.name = name;
 		this.adress = adress;
 		this.description = description;
 		this.fastRezTicket = fastRezTicket;
-		this.projections = projections;
+		this.repertoar = projections;
 		this.id = id;
 		this.isCinema = isCinema;
+		this.averageMark = averageMark;
+	}
+	
+	public double getAverageMark() {
+		return averageMark;
+	}
+	public void setAverageMark(double averageMark) {
+		this.averageMark = averageMark;
 	}
 	public String getName() {
 		return name;
@@ -53,11 +69,11 @@ public class TheaterOrCinema {
 	public void setFastRezTicket(ArrayList<Ticket> fastRezTicket) {
 		this.fastRezTicket = fastRezTicket;
 	}
-	public ArrayList<Projection> getProjections() {
-		return projections;
+	public ArrayList<Projection> getRepertoar() {
+		return repertoar;
 	}
-	public void setProjections(ArrayList<Projection> projections) {
-		this.projections = projections;
+	public void setRepertoar(ArrayList<Projection> projections) {
+		this.repertoar = projections;
 	}
 	public Long getId() {
 		return id;
