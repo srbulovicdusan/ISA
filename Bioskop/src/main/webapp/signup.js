@@ -1,0 +1,3 @@
+$("#registration-btn").click(function(){
+	
+})
