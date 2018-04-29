@@ -20,6 +20,12 @@ public class TheaterOrCinemaService implements TheaterOrCinemaServiceInterface{
 
 	@Override
 	public TheaterOrCinema addTheaterOrCinema(TheaterOrCinema tc) {
+		Collection<TheaterOrCinema> entities = repository.getTheaterOrCinemas();
+		for (TheaterOrCinema entity : entities ){
+			if (entity.getName().equals(tc.getName())){
+				return null;
+			}
+		}
 		return repository.addTheaterOrCinema(tc);
 	}
 

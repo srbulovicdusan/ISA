@@ -13,6 +13,7 @@ import service.ThematicItemService;
 @ComponentScan(basePackageClasses = ThematicItemController.class)
 @ComponentScan(basePackageClasses = ThematicItemService.class)
 @ComponentScan(basePackageClasses = ThematicItemRepository.class)
+
 public class BioskopApplication {
 
 	public static void main(String[] args) {

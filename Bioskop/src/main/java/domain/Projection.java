@@ -14,11 +14,10 @@ public class Projection {
 	private String producer;
 	private int filmDuration;
 	private Image img;
-	private double mark;
+	private double averageMark;
 	private String description;
 	private ArrayList<Integer> halls;
 	private Time terms;
-	private int price;
 	private long id;
 	private boolean isFilm;
 	private ArrayList<Ticket> tickets;
@@ -37,7 +36,7 @@ public class Projection {
 	}
 	
 	public Projection(String name, String actors, String type, String producer, int filmDuration, Image img,
-			double mark, String description, ArrayList<Integer> halls, Time terms, int price, long id,
+			double mark, String description, ArrayList<Integer> halls, Time terms, long id,
 			boolean isFilm, ArrayList<Ticket> tickets) {
 		super();
 		this.name = name;
@@ -46,11 +45,10 @@ public class Projection {
 		this.producer = producer;
 		this.filmDuration = filmDuration;
 		this.img = img;
-		this.mark = mark;
+		this.averageMark = mark;
 		this.description = description;
 		this.halls = halls;
 		this.terms = terms;
-		this.price = price;
 		this.id = id;
 		this.isFilm = isFilm;
 		this.tickets = tickets;
@@ -129,11 +127,11 @@ public class Projection {
 	}
 
 	public double getMark() {
-		return mark;
+		return averageMark;
 	}
 
 	public void setMark(double mark) {
-		this.mark = mark;
+		this.averageMark = mark;
 	}
 
 	public String getDescription() {
@@ -159,15 +157,5 @@ public class Projection {
 	public void setTerms(Time terms) {
 		this.terms = terms;
 	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	
-	
 	
 }

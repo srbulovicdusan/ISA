@@ -17,7 +17,7 @@ import service.UserService;
 
 @RestController
 public class UserController {
-	
+	private static final String DEFAULT_ADMIN_PASSWORD = "ftn";
 	@Autowired
 	private UserService userService;
 
@@ -48,11 +48,14 @@ public class UserController {
 		}
 	}
 	@RequestMapping(
-			value = "/api/createUser",
+			value = "/api/users",
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			method = RequestMethod.POST)
 	public ResponseEntity<User> addUser(@RequestBody User user){
+		if (user.getPassword() == null){
+			user.setPassword(DEFAULT_ADMIN_PASSWORD);
+		}
 		User newUser = userService.addUser(user);
 		return new ResponseEntity<User>(newUser, HttpStatus.OK);
 	}

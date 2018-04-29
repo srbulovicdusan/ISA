@@ -16,6 +16,11 @@ public class UserRepository implements UserInterface {
 	}
 	@Override
 	public User addUser(User user) {
+		for (User u : users){
+			if (u.getUsername().equals(user.getUsername())){
+				return null;
+			}
+		}
 		users.add(user);
 		return user;
 	}

@@ -15,7 +15,7 @@ public class TheaterOrCinemaRepository implements TheaterOrCinemaRepositoryInter
 	
 	@Override
 	public Collection<TheaterOrCinema> getTheaterOrCinemas() {
-		Adresa adresa = new Adresa("City", "Street");
+		Adresa adresa = new Adresa("City", "Street", "021 49 49 49");
 		TheaterOrCinema c1 = new TheaterOrCinema("Name1",adresa, "Description1..................", true);
 		TheaterOrCinema c2 = new TheaterOrCinema("Name2",adresa, "Description2..................", true);
 		TheaterOrCinema c3 = new TheaterOrCinema("Name3",adresa, "Description3..................", false);

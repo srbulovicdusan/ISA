@@ -14,7 +14,11 @@
 			
 			var html = '<hr>';
 			$.each(cinemas, function(i, cinema){
-				if(cinema.isCinema === true){
+				if(cinemas.length == 0){
+					html+='<p>There is no cinema at this moment.</p>';
+				}
+				else{
+				//if(cinema.isCinema === true){
 					html+= '<div border="2" class="row" style="background-color:white" align:"center">'+
 		       		'<div class="col-md-4">'+
 		         	'<h2 font-family:serif>'+cinema.name+'</h2>'+
@@ -23,8 +27,8 @@
 		         	'<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>'+
 		       		'</div>'+
 		    		'</div><hr>';
+				//}
 				}
-				
 			});
 			$('#cinemas').append(html);
 		}
